@@ -1,0 +1,15 @@
+{
+    "task_type": "list",
+    "model_checkpoint": "distilbert-base-uncased",
+    "max_length": 384,
+    "stride": 128,
+    "n_best": 20,
+    "max_answer_length": 30,
+    "batch_size": 8,
+    "train_epochs": 2,
+    "output_dir": "bert-finetuned-squad-accelerate",
+    "lr": 2e-5,
+    "optimizer": "AdamW",
+    "scheduler": "linear",
+    "num_warmup_steps": 0
+}
