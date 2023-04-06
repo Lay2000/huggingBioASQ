@@ -12,6 +12,10 @@ from accelerate import Accelerator
 from data import load_bioasq_dataset, preprocess_datasets, create_dataloaders
 from utils import evaluate_model
 
+import logging
+from datetime import datetime
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train and evaluate a model on the BioASQ dataset.")
@@ -30,6 +34,7 @@ def parse_args():
 
 def main():
     config = parse_args()
+    print(config)
 
     # Configuration
     model_checkpoint = config["model"]["model_checkpoint"]
@@ -49,7 +54,15 @@ def main():
     max_answer_length = config["others"]["max_answer_length"]
     output_dir = config["others"]["output_dir"]
 
-    disable_tqdm = os.environ.get("DISABLE_TQDM", "False") == "True"
+    log_interval = 10
+
+    # Set up logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    logger = logging.getLogger("training")
 
     # Load and preprocess datasets
     bioasq_dataset = load_bioasq_dataset(task_type)
@@ -82,8 +95,9 @@ def main():
     )
 
     # Training and evaluation loop
+    start_time = datetime.now()
     metric = evaluate.load('squad')
-    progress_bar = tqdm(range(num_training_steps), disable=disable_tqdm)
+    # progress_bar = tqdm(range(num_training_steps), disable=disable_tqdm)
 
     train_losses = []
     validation_metrics = []
@@ -102,10 +116,16 @@ def main():
             lr_scheduler.step()
             optimizer.zero_grad()
 
-            if step % 10 == 0:
-                progress_bar.set_description(f"Epoch {epoch+1}/{num_train_epochs}")
-                progress_bar.set_postfix({"loss": f"{loss.item():.4f}"})
-                progress_bar.update(10)
+            if step % log_interval == 0:
+                current_lr = lr_scheduler.get_last_lr()[0]
+                elapsed_time = datetime.now() - start_time
+                eta = (elapsed_time / (step + 1)) * (num_training_steps - (step + 1))
+    
+                
+                logger.info(
+                    f"Epoch [{epoch+1}/{num_train_epochs}][{step+1}/{num_update_steps_per_epoch}] "
+                    f"lr: {current_lr:.1e}, eta: {eta}, loss: {loss.item():.4f}"
+                )
 
         train_losses.append(epoch_loss / len(train_dataloader))
 
@@ -114,14 +134,21 @@ def main():
             model, validation_dataloader, validation_dataset, bioasq_dataset["validation"], metric, n_best, max_answer_length, accelerator
         )
         validation_metrics.append(metrics)
-        accelerator.print(f"[Log] Epoch {epoch} - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {metrics}")
+        # accelerator.print(f"[Log] Epoch {epoch} - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {metrics}")
+        logger.info(f"Epoch [{epoch+1}/{num_train_epochs}][Evaluation] - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {metrics}")
 
 
     # Evaluation on the test set
     metrics = evaluate_model(
             model, test_dataloader, test_dataset, bioasq_dataset["test"], metric, n_best, max_answer_length, accelerator
         )
-    accelerator.print(f"[Log] Final Test metrics:", metrics)
+    # accelerator.print(f"[Log] Final Test metrics:", metrics)
+    logger.info(f"Final Test - Train Loss: {train_losses[-1]:.4f}, Test Metrics: {metrics}")
+    
+    # Save the final model
+    accelerator.wait_for_everyone()
+    unwrapped_model = accelerator.unwrap_model(model)
+    unwrapped_model.save_pretrained(output_dir, save_function=accelerator.save)
 
 if __name__ == "__main__":
     main()

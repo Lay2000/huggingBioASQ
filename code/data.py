@@ -118,9 +118,9 @@ def load_bioasq_dataset(type='list'):
     val_data = raw_dataset['val']
     test_data = raw_dataset['test']
 
-    train_examples = flatten_dataset(train_data)[:100]
-    val_examples = flatten_dataset(val_data)[:20]
-    test_examples = flatten_dataset(test_data)[:20]
+    train_examples = flatten_dataset(train_data)
+    val_examples = flatten_dataset(val_data)
+    test_examples = flatten_dataset(test_data)
 
     train_data = Dataset.from_dict({key: [example[key] for example in train_examples] for key in train_examples[0].keys()})
     val_data = Dataset.from_dict({key: [example[key] for example in val_examples] for key in val_examples[0].keys()})
