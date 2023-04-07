@@ -1,0 +1,23 @@
+{
+    "model": {
+        "model_checkpoint": "deepset/bert-base-uncased-squad2"
+    },
+    "data": {
+        "task_type": "factoid",
+        "max_length": 384,
+        "stride": 128
+    },
+    "hyperparameters": {
+        "batch_size": 16,
+        "train_epochs": 5,
+        "lr": 4.54e-5,
+        "optimizer": "AdamW",
+        "scheduler": "linear",
+        "num_warmup_steps": 0
+    },
+    "others": {
+        "n_best": 20,
+        "max_answer_length": 30,
+        "output_dir": "models/bert_factoid_squad2"
+    }
+}
