@@ -2,4 +2,4 @@ data/BioASQ-6b/
 data/BioASQ-7b/
 data/BioASQ-67b-15Oct2019.zip
 __pycache__/
-model/
+models/

@@ -99,6 +99,16 @@ def main():
     metric = evaluate.load('squad')
     # progress_bar = tqdm(range(num_training_steps), disable=disable_tqdm)
 
+    # Evaluation at the beginning
+    val_metrics = evaluate_model(
+            model, validation_dataloader, validation_dataset, bioasq_dataset["validation"], metric, n_best, max_answer_length, accelerator
+        )
+    test_metrics = evaluate_model(
+            model, test_dataloader, test_dataset, bioasq_dataset["test"], metric, n_best, max_answer_length, accelerator
+        )
+    # accelerator.print(f"[Log] Final Test metrics:", metrics)
+    logger.info(f"First Test - Val Metrics:{val_metrics} Test Metrics: {test_metrics}")
+
     train_losses = []
     validation_metrics = []
 
