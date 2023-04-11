@@ -159,7 +159,7 @@ def main():
         test_metrics = evaluate_model(
             model, test_dataloader, test_dataset, bioasq_dataset["test"], metric, n_best, max_answer_length, accelerator
         )
-        validation_metrics.append(metrics)
+        validation_metrics.append(val_metrics)
         logger.info(f"Epoch [{epoch+1}/{num_train_epochs}][Evaluation] - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {val_metrics}, Test Metrics: {test_metrics}")
 
 
