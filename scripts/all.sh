@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Loop through all JSON files in the "configs" directory
-for config_file in configs/bert/*.json
+for config_file in configs/xlnet/factoid/*.json
 do
   # Extract the filename (without extension) from the path
   filename=$(basename -- "$config_file")
