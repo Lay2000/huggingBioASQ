@@ -2,6 +2,9 @@ import evaluate
 import argparse
 import json
 import os
+import torch
+import random
+import numpy as np
 
 from tqdm.auto import tqdm
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
@@ -33,6 +36,16 @@ def parse_args():
 
 
 def main():
+    seed = 1024
+
+    torch.manual_seed(seed)            
+    torch.cuda.manual_seed(seed)       
+    torch.cuda.manual_seed_all(seed)
+
+    random.seed(seed)
+    np.random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+
     config = parse_args()
     print(config)
 
@@ -140,12 +153,14 @@ def main():
         train_losses.append(epoch_loss / len(train_dataloader))
 
         # Evaluation
-        metrics = evaluate_model(
+        val_metrics = evaluate_model(
             model, validation_dataloader, validation_dataset, bioasq_dataset["validation"], metric, n_best, max_answer_length, accelerator
         )
-        validation_metrics.append(metrics)
-        # accelerator.print(f"[Log] Epoch {epoch} - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {metrics}")
-        logger.info(f"Epoch [{epoch+1}/{num_train_epochs}][Evaluation] - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {metrics}")
+        test_metrics = evaluate_model(
+            model, test_dataloader, test_dataset, bioasq_dataset["test"], metric, n_best, max_answer_length, accelerator
+        )
+        validation_metrics.append(val_metrics)
+        logger.info(f"Epoch [{epoch+1}/{num_train_epochs}][Evaluation] - Train Loss: {train_losses[-1]:.4f}, Validation Metrics: {val_metrics}, Test Metrics: {test_metrics}")
 
 
     # Evaluation on the test set

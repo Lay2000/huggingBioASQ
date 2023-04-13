@@ -1,0 +1,23 @@
+{
+    "model": {
+        "model_checkpoint": "xlnet-base-cased"
+    },
+    "data": {
+        "task_type": "list",
+        "max_length": 384,
+        "stride": 128
+    },
+    "hyperparameters": {
+        "batch_size": 16,
+        "train_epochs": 5,
+        "lr": 1e-05,
+        "optimizer": "AdamW",
+        "scheduler": "linear",
+        "num_warmup_steps": 0
+    },
+    "others": {
+        "n_best": 20,
+        "max_answer_length": 30,
+        "output_dir": "models/xlnet_list_base"
+    }
+}
