@@ -1,0 +1,360 @@
+2023-04-12 16:32:43 - datasets.builder - WARNING - Found cached dataset json (/root/.cache/huggingface/datasets/json/default-44a167365c0b341b/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+{'model': {'model_checkpoint': 'xlnet-base-cased'}, 'data': {'task_type': 'list', 'max_length': 384, 'stride': 128}, 'hyperparameters': {'batch_size': 16, 'train_epochs': 5, 'lr': 1e-05, 'optimizer': 'AdamW', 'scheduler': 'linear', 'num_warmup_steps': 0}, 'others': {'n_best': 20, 'max_answer_length': 30, 'output_dir': 'models/xlnet_list_base'}}
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 583.35it/s]
+Map:   0%|          | 0/6878 [00:00<?, ? examples/s]Map:  15%|█▍        | 1000/6878 [00:00<00:03, 1479.25 examples/s]Map:  29%|██▉       | 2000/6878 [00:01<00:03, 1544.78 examples/s]Map:  44%|████▎     | 3000/6878 [00:01<00:02, 1555.78 examples/s]Map:  58%|█████▊    | 4000/6878 [00:02<00:01, 1553.23 examples/s]Map:  73%|███████▎  | 5000/6878 [00:03<00:01, 1553.12 examples/s]Map:  87%|████████▋ | 6000/6878 [00:03<00:00, 1556.02 examples/s]Map: 100%|██████████| 6878/6878 [00:04<00:00, 1447.45 examples/s]                                                                 Map:   0%|          | 0/859 [00:00<?, ? examples/s]Map: 100%|██████████| 859/859 [00:00<00:00, 1216.65 examples/s]                                                               Map:   0%|          | 0/861 [00:00<?, ? examples/s]Map: 100%|██████████| 861/861 [00:00<00:00, 1211.97 examples/s]                                                               Some weights of the model checkpoint at xlnet-base-cased were not used when initializing XLNetForQuestionAnsweringSimple: ['lm_loss.weight', 'lm_loss.bias']
+- This IS expected if you are initializing XLNetForQuestionAnsweringSimple from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLNetForQuestionAnsweringSimple from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of XLNetForQuestionAnsweringSimple were not initialized from the model checkpoint at xlnet-base-cased and are newly initialized: ['qa_outputs.bias', 'qa_outputs.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2023-04-12 16:34:12 - training - INFO - First Test - Val Metrics:{'exact_match': 0.3492433061699651, 'f1': 3.2844760057985867} Test Metrics: {'exact_match': 0.6968641114982579, 'f1': 3.20263173039842}
+2023-04-12 16:34:13 - training - INFO - Epoch [1/5][1/690] lr: 1.0e-05, eta: 3 days, 1:24:09.159983, loss: 7.5106
+2023-04-12 16:34:20 - training - INFO - Epoch [1/5][11/690] lr: 1.0e-05, eta: 7:18:16.564547, loss: 5.8143
+2023-04-12 16:34:28 - training - INFO - Epoch [1/5][21/690] lr: 9.9e-06, eta: 4:09:46.146177, loss: 5.6518
+2023-04-12 16:34:36 - training - INFO - Epoch [1/5][31/690] lr: 9.9e-06, eta: 3:02:54.617329, loss: 5.2612
+2023-04-12 16:34:43 - training - INFO - Epoch [1/5][41/690] lr: 9.9e-06, eta: 2:28:23.626200, loss: 5.3062
+2023-04-12 16:34:51 - training - INFO - Epoch [1/5][51/690] lr: 9.9e-06, eta: 2:07:22.858839, loss: 4.6581
+2023-04-12 16:34:59 - training - INFO - Epoch [1/5][61/690] lr: 9.8e-06, eta: 1:53:15.178841, loss: 4.4105
+2023-04-12 16:35:06 - training - INFO - Epoch [1/5][71/690] lr: 9.8e-06, eta: 1:43:16.379789, loss: 3.8385
+2023-04-12 16:35:14 - training - INFO - Epoch [1/5][81/690] lr: 9.8e-06, eta: 1:35:42.076434, loss: 3.9836
+2023-04-12 16:35:22 - training - INFO - Epoch [1/5][91/690] lr: 9.7e-06, eta: 1:29:38.252773, loss: 4.5325
+2023-04-12 16:35:30 - training - INFO - Epoch [1/5][101/690] lr: 9.7e-06, eta: 1:24:48.323244, loss: 4.1989
+2023-04-12 16:35:37 - training - INFO - Epoch [1/5][111/690] lr: 9.7e-06, eta: 1:20:41.977392, loss: 3.8694
+2023-04-12 16:35:45 - training - INFO - Epoch [1/5][121/690] lr: 9.6e-06, eta: 1:17:24.074844, loss: 3.9469
+2023-04-12 16:35:53 - training - INFO - Epoch [1/5][131/690] lr: 9.6e-06, eta: 1:14:30.065709, loss: 3.5709
+2023-04-12 16:36:00 - training - INFO - Epoch [1/5][141/690] lr: 9.6e-06, eta: 1:12:00.538137, loss: 3.9620
+2023-04-12 16:36:08 - training - INFO - Epoch [1/5][151/690] lr: 9.6e-06, eta: 1:09:52.619924, loss: 3.1256
+2023-04-12 16:36:16 - training - INFO - Epoch [1/5][161/690] lr: 9.5e-06, eta: 1:07:55.186115, loss: 3.8166
+2023-04-12 16:36:23 - training - INFO - Epoch [1/5][171/690] lr: 9.5e-06, eta: 1:06:09.137688, loss: 3.0078
+2023-04-12 16:36:31 - training - INFO - Epoch [1/5][181/690] lr: 9.5e-06, eta: 1:04:39.524978, loss: 3.1605
+2023-04-12 16:36:39 - training - INFO - Epoch [1/5][191/690] lr: 9.4e-06, eta: 1:03:14.854557, loss: 3.4874
+2023-04-12 16:36:46 - training - INFO - Epoch [1/5][201/690] lr: 9.4e-06, eta: 1:02:00.286944, loss: 3.0728
+2023-04-12 16:36:54 - training - INFO - Epoch [1/5][211/690] lr: 9.4e-06, eta: 1:00:48.765890, loss: 2.7921
+2023-04-12 16:37:02 - training - INFO - Epoch [1/5][221/690] lr: 9.4e-06, eta: 0:59:43.860642, loss: 2.7233
+2023-04-12 16:37:09 - training - INFO - Epoch [1/5][231/690] lr: 9.3e-06, eta: 0:58:44.029221, loss: 3.3108
+2023-04-12 16:37:17 - training - INFO - Epoch [1/5][241/690] lr: 9.3e-06, eta: 0:57:52.750919, loss: 2.5415
+2023-04-12 16:37:25 - training - INFO - Epoch [1/5][251/690] lr: 9.3e-06, eta: 0:57:03.166726, loss: 3.0331
+2023-04-12 16:37:32 - training - INFO - Epoch [1/5][261/690] lr: 9.2e-06, eta: 0:56:14.832597, loss: 2.5093
+2023-04-12 16:37:40 - training - INFO - Epoch [1/5][271/690] lr: 9.2e-06, eta: 0:55:32.730082, loss: 2.7155
+2023-04-12 16:37:48 - training - INFO - Epoch [1/5][281/690] lr: 9.2e-06, eta: 0:54:48.585384, loss: 2.6986
+2023-04-12 16:37:56 - training - INFO - Epoch [1/5][291/690] lr: 9.2e-06, eta: 0:54:10.216125, loss: 2.6896
+2023-04-12 16:38:03 - training - INFO - Epoch [1/5][301/690] lr: 9.1e-06, eta: 0:53:31.750123, loss: 2.0665
+2023-04-12 16:38:11 - training - INFO - Epoch [1/5][311/690] lr: 9.1e-06, eta: 0:52:55.842443, loss: 2.7144
+2023-04-12 16:38:18 - training - INFO - Epoch [1/5][321/690] lr: 9.1e-06, eta: 0:52:20.721234, loss: 2.8781
+2023-04-12 16:38:26 - training - INFO - Epoch [1/5][331/690] lr: 9.0e-06, eta: 0:51:47.082301, loss: 3.1634
+2023-04-12 16:38:34 - training - INFO - Epoch [1/5][341/690] lr: 9.0e-06, eta: 0:51:16.831177, loss: 2.6709
+2023-04-12 16:38:41 - training - INFO - Epoch [1/5][351/690] lr: 9.0e-06, eta: 0:50:46.946097, loss: 2.2304
+2023-04-12 16:38:49 - training - INFO - Epoch [1/5][361/690] lr: 9.0e-06, eta: 0:50:18.011691, loss: 2.7971
+2023-04-12 16:38:57 - training - INFO - Epoch [1/5][371/690] lr: 8.9e-06, eta: 0:49:50.275536, loss: 2.2890
+2023-04-12 16:39:04 - training - INFO - Epoch [1/5][381/690] lr: 8.9e-06, eta: 0:49:23.395710, loss: 2.6385
+2023-04-12 16:39:12 - training - INFO - Epoch [1/5][391/690] lr: 8.9e-06, eta: 0:49:01.672055, loss: 2.9414
+2023-04-12 16:39:20 - training - INFO - Epoch [1/5][401/690] lr: 8.8e-06, eta: 0:48:35.926395, loss: 2.4729
+2023-04-12 16:39:27 - training - INFO - Epoch [1/5][411/690] lr: 8.8e-06, eta: 0:48:11.806035, loss: 2.6557
+2023-04-12 16:39:35 - training - INFO - Epoch [1/5][421/690] lr: 8.8e-06, eta: 0:47:48.550841, loss: 3.0454
+2023-04-12 16:39:43 - training - INFO - Epoch [1/5][431/690] lr: 8.8e-06, eta: 0:47:26.020357, loss: 3.0719
+2023-04-12 16:39:50 - training - INFO - Epoch [1/5][441/690] lr: 8.7e-06, eta: 0:47:03.741888, loss: 2.1723
+2023-04-12 16:39:58 - training - INFO - Epoch [1/5][451/690] lr: 8.7e-06, eta: 0:46:43.597156, loss: 3.0090
+2023-04-12 16:40:06 - training - INFO - Epoch [1/5][461/690] lr: 8.7e-06, eta: 0:46:23.542118, loss: 2.5471
+2023-04-12 16:40:13 - training - INFO - Epoch [1/5][471/690] lr: 8.6e-06, eta: 0:46:03.630216, loss: 2.5176
+2023-04-12 16:40:21 - training - INFO - Epoch [1/5][481/690] lr: 8.6e-06, eta: 0:45:43.287713, loss: 2.9773
+2023-04-12 16:40:28 - training - INFO - Epoch [1/5][491/690] lr: 8.6e-06, eta: 0:45:24.892797, loss: 2.0198
+2023-04-12 16:40:36 - training - INFO - Epoch [1/5][501/690] lr: 8.5e-06, eta: 0:45:06.539118, loss: 2.5499
+2023-04-12 16:40:44 - training - INFO - Epoch [1/5][511/690] lr: 8.5e-06, eta: 0:44:49.452449, loss: 2.2605
+2023-04-12 16:40:51 - training - INFO - Epoch [1/5][521/690] lr: 8.5e-06, eta: 0:44:30.984390, loss: 1.7534
+2023-04-12 16:40:59 - training - INFO - Epoch [1/5][531/690] lr: 8.5e-06, eta: 0:44:14.054046, loss: 2.5736
+2023-04-12 16:41:07 - training - INFO - Epoch [1/5][541/690] lr: 8.4e-06, eta: 0:43:57.494303, loss: 2.6318
+2023-04-12 16:41:14 - training - INFO - Epoch [1/5][551/690] lr: 8.4e-06, eta: 0:43:41.217820, loss: 2.4160
+2023-04-12 16:41:22 - training - INFO - Epoch [1/5][561/690] lr: 8.4e-06, eta: 0:43:24.473946, loss: 2.7502
+2023-04-12 16:41:30 - training - INFO - Epoch [1/5][571/690] lr: 8.3e-06, eta: 0:43:08.134630, loss: 2.0776
+2023-04-12 16:41:37 - training - INFO - Epoch [1/5][581/690] lr: 8.3e-06, eta: 0:42:51.975299, loss: 2.5568
+2023-04-12 16:41:45 - training - INFO - Epoch [1/5][591/690] lr: 8.3e-06, eta: 0:42:36.257631, loss: 1.9457
+2023-04-12 16:41:52 - training - INFO - Epoch [1/5][601/690] lr: 8.3e-06, eta: 0:42:20.877801, loss: 1.3524
+2023-04-12 16:42:00 - training - INFO - Epoch [1/5][611/690] lr: 8.2e-06, eta: 0:42:06.809365, loss: 2.1268
+2023-04-12 16:42:08 - training - INFO - Epoch [1/5][621/690] lr: 8.2e-06, eta: 0:41:51.900219, loss: 2.0528
+2023-04-12 16:42:15 - training - INFO - Epoch [1/5][631/690] lr: 8.2e-06, eta: 0:41:38.220352, loss: 1.6510
+2023-04-12 16:42:23 - training - INFO - Epoch [1/5][641/690] lr: 8.1e-06, eta: 0:41:23.467799, loss: 3.3710
+2023-04-12 16:42:31 - training - INFO - Epoch [1/5][651/690] lr: 8.1e-06, eta: 0:41:09.261006, loss: 2.6998
+2023-04-12 16:42:38 - training - INFO - Epoch [1/5][661/690] lr: 8.1e-06, eta: 0:40:55.282205, loss: 2.2822
+2023-04-12 16:42:46 - training - INFO - Epoch [1/5][671/690] lr: 8.1e-06, eta: 0:40:41.507124, loss: 1.5948
+2023-04-12 16:42:54 - training - INFO - Epoch [1/5][681/690] lr: 8.0e-06, eta: 0:40:28.728666, loss: 2.7950
+2023-04-12 16:44:16 - training - INFO - Epoch [1/5][Evaluation] - Train Loss: 3.0097, Validation Metrics: {'exact_match': 12.456344586728754, 'f1': 17.89680311209954}, Test Metrics: {'exact_match': 14.518002322880372, 'f1': 19.1653922209981}
+2023-04-12 16:44:17 - training - INFO - Epoch [2/5][1/690] lr: 8.0e-06, eta: 27 days, 4:15:04.284577, loss: 1.0402
+2023-04-12 16:44:25 - training - INFO - Epoch [2/5][11/690] lr: 8.0e-06, eta: 2 days, 11:46:38.554490, loss: 1.8427
+2023-04-12 16:44:32 - training - INFO - Epoch [2/5][21/690] lr: 7.9e-06, eta: 1 day, 7:34:16.303548, loss: 2.3656
+2023-04-12 16:44:40 - training - INFO - Epoch [2/5][31/690] lr: 7.9e-06, eta: 21:33:19.989948, loss: 1.2858
+2023-04-12 16:44:48 - training - INFO - Epoch [2/5][41/690] lr: 7.9e-06, eta: 16:25:39.400180, loss: 2.4246
+2023-04-12 16:44:55 - training - INFO - Epoch [2/5][51/690] lr: 7.9e-06, eta: 13:18:28.242195, loss: 2.2466
+2023-04-12 16:45:03 - training - INFO - Epoch [2/5][61/690] lr: 7.8e-06, eta: 11:12:48.585239, loss: 1.3837
+2023-04-12 16:45:10 - training - INFO - Epoch [2/5][71/690] lr: 7.8e-06, eta: 9:42:21.874068, loss: 1.5391
+2023-04-12 16:45:18 - training - INFO - Epoch [2/5][81/690] lr: 7.8e-06, eta: 8:34:15.592920, loss: 2.4766
+2023-04-12 16:45:26 - training - INFO - Epoch [2/5][91/690] lr: 7.7e-06, eta: 7:41:11.200152, loss: 2.2051
+2023-04-12 16:45:34 - training - INFO - Epoch [2/5][101/690] lr: 7.7e-06, eta: 6:58:30.269509, loss: 1.6013
+2023-04-12 16:45:41 - training - INFO - Epoch [2/5][111/690] lr: 7.7e-06, eta: 6:23:30.414651, loss: 1.9873
+2023-04-12 16:45:49 - training - INFO - Epoch [2/5][121/690] lr: 7.6e-06, eta: 5:54:16.104428, loss: 1.6856
+2023-04-12 16:45:57 - training - INFO - Epoch [2/5][131/690] lr: 7.6e-06, eta: 5:29:30.824978, loss: 2.3808
+2023-04-12 16:46:05 - training - INFO - Epoch [2/5][141/690] lr: 7.6e-06, eta: 5:08:19.934037, loss: 2.1463
+2023-04-12 16:46:12 - training - INFO - Epoch [2/5][151/690] lr: 7.6e-06, eta: 4:49:47.303623, loss: 1.6900
+2023-04-12 16:46:20 - training - INFO - Epoch [2/5][161/690] lr: 7.5e-06, eta: 4:33:31.244993, loss: 2.3545
+2023-04-12 16:46:27 - training - INFO - Epoch [2/5][171/690] lr: 7.5e-06, eta: 4:19:09.316389, loss: 1.7843
+2023-04-12 16:46:35 - training - INFO - Epoch [2/5][181/690] lr: 7.5e-06, eta: 4:06:27.207085, loss: 1.7973
+2023-04-12 16:46:42 - training - INFO - Epoch [2/5][191/690] lr: 7.4e-06, eta: 3:54:58.026625, loss: 1.6914
+2023-04-12 16:46:50 - training - INFO - Epoch [2/5][201/690] lr: 7.4e-06, eta: 3:44:36.955968, loss: 1.1142
+2023-04-12 16:46:58 - training - INFO - Epoch [2/5][211/690] lr: 7.4e-06, eta: 3:35:17.417032, loss: 2.0811
+2023-04-12 16:47:05 - training - INFO - Epoch [2/5][221/690] lr: 7.4e-06, eta: 3:26:45.469268, loss: 2.0948
+2023-04-12 16:47:13 - training - INFO - Epoch [2/5][231/690] lr: 7.3e-06, eta: 3:19:00.256014, loss: 2.3899
+2023-04-12 16:47:21 - training - INFO - Epoch [2/5][241/690] lr: 7.3e-06, eta: 3:11:51.042408, loss: 1.9864
+2023-04-12 16:47:28 - training - INFO - Epoch [2/5][251/690] lr: 7.3e-06, eta: 3:05:16.249886, loss: 2.7188
+2023-04-12 16:47:36 - training - INFO - Epoch [2/5][261/690] lr: 7.2e-06, eta: 2:59:09.838368, loss: 1.6297
+2023-04-12 16:47:44 - training - INFO - Epoch [2/5][271/690] lr: 7.2e-06, eta: 2:53:30.935711, loss: 1.8711
+2023-04-12 16:47:52 - training - INFO - Epoch [2/5][281/690] lr: 7.2e-06, eta: 2:48:16.883998, loss: 1.5533
+2023-04-12 16:47:59 - training - INFO - Epoch [2/5][291/690] lr: 7.2e-06, eta: 2:43:23.795391, loss: 1.4417
+2023-04-12 16:48:07 - training - INFO - Epoch [2/5][301/690] lr: 7.1e-06, eta: 2:38:47.560867, loss: 1.1344
+2023-04-12 16:48:15 - training - INFO - Epoch [2/5][311/690] lr: 7.1e-06, eta: 2:34:28.095257, loss: 1.6597
+2023-04-12 16:48:22 - training - INFO - Epoch [2/5][321/690] lr: 7.1e-06, eta: 2:30:24.364545, loss: 1.9313
+2023-04-12 16:48:30 - training - INFO - Epoch [2/5][331/690] lr: 7.0e-06, eta: 2:26:37.966035, loss: 1.5748
+2023-04-12 16:48:38 - training - INFO - Epoch [2/5][341/690] lr: 7.0e-06, eta: 2:23:02.211069, loss: 2.0397
+2023-04-12 16:48:45 - training - INFO - Epoch [2/5][351/690] lr: 7.0e-06, eta: 2:19:37.188909, loss: 1.7102
+2023-04-12 16:48:53 - training - INFO - Epoch [2/5][361/690] lr: 7.0e-06, eta: 2:16:24.135605, loss: 1.5012
+2023-04-12 16:49:00 - training - INFO - Epoch [2/5][371/690] lr: 6.9e-06, eta: 2:13:21.175612, loss: 1.5455
+2023-04-12 16:49:08 - training - INFO - Epoch [2/5][381/690] lr: 6.9e-06, eta: 2:10:29.166312, loss: 1.0027
+2023-04-12 16:49:16 - training - INFO - Epoch [2/5][391/690] lr: 6.9e-06, eta: 2:07:43.804470, loss: 1.3434
+2023-04-12 16:49:24 - training - INFO - Epoch [2/5][401/690] lr: 6.8e-06, eta: 2:05:07.156330, loss: 1.5220
+2023-04-12 16:49:31 - training - INFO - Epoch [2/5][411/690] lr: 6.8e-06, eta: 2:02:36.036255, loss: 2.1502
+2023-04-12 16:49:39 - training - INFO - Epoch [2/5][421/690] lr: 6.8e-06, eta: 2:00:13.175788, loss: 1.1761
+2023-04-12 16:49:46 - training - INFO - Epoch [2/5][431/690] lr: 6.8e-06, eta: 1:57:55.814459, loss: 2.2001
+2023-04-12 16:49:54 - training - INFO - Epoch [2/5][441/690] lr: 6.7e-06, eta: 1:55:44.173209, loss: 2.0163
+2023-04-12 16:50:01 - training - INFO - Epoch [2/5][451/690] lr: 6.7e-06, eta: 1:53:37.317803, loss: 1.1098
+2023-04-12 16:50:09 - training - INFO - Epoch [2/5][461/690] lr: 6.7e-06, eta: 1:51:35.760526, loss: 1.8838
+2023-04-12 16:50:17 - training - INFO - Epoch [2/5][471/690] lr: 6.6e-06, eta: 1:49:39.750069, loss: 1.9264
+2023-04-12 16:50:24 - training - INFO - Epoch [2/5][481/690] lr: 6.6e-06, eta: 1:47:48.910642, loss: 2.2688
+2023-04-12 16:50:32 - training - INFO - Epoch [2/5][491/690] lr: 6.6e-06, eta: 1:46:03.193386, loss: 2.0019
+2023-04-12 16:50:40 - training - INFO - Epoch [2/5][501/690] lr: 6.5e-06, eta: 1:44:20.597244, loss: 1.7123
+2023-04-12 16:50:48 - training - INFO - Epoch [2/5][511/690] lr: 6.5e-06, eta: 1:42:41.260820, loss: 2.1485
+2023-04-12 16:50:55 - training - INFO - Epoch [2/5][521/690] lr: 6.5e-06, eta: 1:41:05.182815, loss: 2.3662
+2023-04-12 16:51:03 - training - INFO - Epoch [2/5][531/690] lr: 6.5e-06, eta: 1:39:32.980398, loss: 2.7712
+2023-04-12 16:51:10 - training - INFO - Epoch [2/5][541/690] lr: 6.4e-06, eta: 1:38:03.635767, loss: 2.0610
+2023-04-12 16:51:18 - training - INFO - Epoch [2/5][551/690] lr: 6.4e-06, eta: 1:36:37.475281, loss: 1.3424
+2023-04-12 16:51:26 - training - INFO - Epoch [2/5][561/690] lr: 6.4e-06, eta: 1:35:13.046613, loss: 1.4353
+2023-04-12 16:51:33 - training - INFO - Epoch [2/5][571/690] lr: 6.3e-06, eta: 1:33:52.394988, loss: 1.2160
+2023-04-12 16:51:41 - training - INFO - Epoch [2/5][581/690] lr: 6.3e-06, eta: 1:32:34.125790, loss: 1.6307
+2023-04-12 16:51:49 - training - INFO - Epoch [2/5][591/690] lr: 6.3e-06, eta: 1:31:17.495202, loss: 2.2412
+2023-04-12 16:51:56 - training - INFO - Epoch [2/5][601/690] lr: 6.3e-06, eta: 1:30:04.094311, loss: 1.5532
+2023-04-12 16:52:04 - training - INFO - Epoch [2/5][611/690] lr: 6.2e-06, eta: 1:28:52.732176, loss: 1.3678
+2023-04-12 16:52:12 - training - INFO - Epoch [2/5][621/690] lr: 6.2e-06, eta: 1:27:43.725099, loss: 1.7459
+2023-04-12 16:52:19 - training - INFO - Epoch [2/5][631/690] lr: 6.2e-06, eta: 1:26:36.626351, loss: 1.8400
+2023-04-12 16:52:27 - training - INFO - Epoch [2/5][641/690] lr: 6.1e-06, eta: 1:25:30.795804, loss: 1.6865
+2023-04-12 16:52:35 - training - INFO - Epoch [2/5][651/690] lr: 6.1e-06, eta: 1:24:27.415962, loss: 2.0162
+2023-04-12 16:52:43 - training - INFO - Epoch [2/5][661/690] lr: 6.1e-06, eta: 1:23:25.256538, loss: 1.7418
+2023-04-12 16:52:50 - training - INFO - Epoch [2/5][671/690] lr: 6.1e-06, eta: 1:22:24.449601, loss: 1.9925
+2023-04-12 16:52:58 - training - INFO - Epoch [2/5][681/690] lr: 6.0e-06, eta: 1:21:25.197174, loss: 1.6653
+2023-04-12 16:54:21 - training - INFO - Epoch [2/5][Evaluation] - Train Loss: 1.8311, Validation Metrics: {'exact_match': 15.832363213038416, 'f1': 22.30500013580882}, Test Metrics: {'exact_match': 19.16376306620209, 'f1': 24.830527056222255}
+2023-04-12 16:54:22 - training - INFO - Epoch [3/5][1/690] lr: 6.0e-06, eta: 51 days, 7:52:18.837556, loss: 1.5477
+2023-04-12 16:54:30 - training - INFO - Epoch [3/5][11/690] lr: 6.0e-06, eta: 4 days, 16:19:05.236161, loss: 2.4085
+2023-04-12 16:54:37 - training - INFO - Epoch [3/5][21/690] lr: 5.9e-06, eta: 2 days, 11:00:24.091407, loss: 2.1448
+2023-04-12 16:54:45 - training - INFO - Epoch [3/5][31/690] lr: 5.9e-06, eta: 1 day, 16:05:19.367972, loss: 1.2445
+2023-04-12 16:54:52 - training - INFO - Epoch [3/5][41/690] lr: 5.9e-06, eta: 1 day, 6:23:49.772704, loss: 1.7568
+2023-04-12 16:55:00 - training - INFO - Epoch [3/5][51/690] lr: 5.9e-06, eta: 1 day, 0:30:11.126718, loss: 1.7549
+2023-04-12 16:55:08 - training - INFO - Epoch [3/5][61/690] lr: 5.8e-06, eta: 20:32:49.378146, loss: 1.6329
+2023-04-12 16:55:15 - training - INFO - Epoch [3/5][71/690] lr: 5.8e-06, eta: 17:42:09.615984, loss: 1.8123
+2023-04-12 16:55:23 - training - INFO - Epoch [3/5][81/690] lr: 5.8e-06, eta: 15:33:36.817815, loss: 2.3231
+2023-04-12 16:55:31 - training - INFO - Epoch [3/5][91/690] lr: 5.7e-06, eta: 13:53:21.338379, loss: 1.3068
+2023-04-12 16:55:39 - training - INFO - Epoch [3/5][101/690] lr: 5.7e-06, eta: 12:32:49.892024, loss: 1.0796
+2023-04-12 16:55:46 - training - INFO - Epoch [3/5][111/690] lr: 5.7e-06, eta: 11:26:48.465501, loss: 1.0770
+2023-04-12 16:55:54 - training - INFO - Epoch [3/5][121/690] lr: 5.6e-06, eta: 10:31:45.425470, loss: 1.5873
+2023-04-12 16:56:02 - training - INFO - Epoch [3/5][131/690] lr: 5.6e-06, eta: 9:44:57.213565, loss: 1.7927
+2023-04-12 16:56:09 - training - INFO - Epoch [3/5][141/690] lr: 5.6e-06, eta: 9:04:49.806231, loss: 2.1140
+2023-04-12 16:56:17 - training - INFO - Epoch [3/5][151/690] lr: 5.6e-06, eta: 8:29:59.917387, loss: 1.9315
+2023-04-12 16:56:24 - training - INFO - Epoch [3/5][161/690] lr: 5.5e-06, eta: 7:59:27.291124, loss: 1.2985
+2023-04-12 16:56:32 - training - INFO - Epoch [3/5][171/690] lr: 5.5e-06, eta: 7:32:33.451464, loss: 2.8163
+2023-04-12 16:56:40 - training - INFO - Epoch [3/5][181/690] lr: 5.5e-06, eta: 7:08:33.287124, loss: 1.3883
+2023-04-12 16:56:48 - training - INFO - Epoch [3/5][191/690] lr: 5.4e-06, eta: 6:47:03.803117, loss: 1.6621
+2023-04-12 16:56:55 - training - INFO - Epoch [3/5][201/690] lr: 5.4e-06, eta: 6:27:40.162824, loss: 1.0394
+2023-04-12 16:57:03 - training - INFO - Epoch [3/5][211/690] lr: 5.4e-06, eta: 6:10:04.290788, loss: 1.6293
+2023-04-12 16:57:10 - training - INFO - Epoch [3/5][221/690] lr: 5.4e-06, eta: 5:54:07.178419, loss: 2.1015
+2023-04-12 16:57:18 - training - INFO - Epoch [3/5][231/690] lr: 5.3e-06, eta: 5:39:33.118599, loss: 1.4051
+2023-04-12 16:57:26 - training - INFO - Epoch [3/5][241/690] lr: 5.3e-06, eta: 5:26:12.952137, loss: 1.2531
+2023-04-12 16:57:34 - training - INFO - Epoch [3/5][251/690] lr: 5.3e-06, eta: 5:13:50.807933, loss: 1.8348
+2023-04-12 16:57:41 - training - INFO - Epoch [3/5][261/690] lr: 5.2e-06, eta: 5:02:25.103856, loss: 1.7759
+2023-04-12 16:57:49 - training - INFO - Epoch [3/5][271/690] lr: 5.2e-06, eta: 4:51:53.101463, loss: 1.6989
+2023-04-12 16:57:57 - training - INFO - Epoch [3/5][281/690] lr: 5.2e-06, eta: 4:42:03.350489, loss: 1.7633
+2023-04-12 16:58:05 - training - INFO - Epoch [3/5][291/690] lr: 5.2e-06, eta: 4:32:58.745292, loss: 1.6865
+2023-04-12 16:58:13 - training - INFO - Epoch [3/5][301/690] lr: 5.1e-06, eta: 4:24:29.530354, loss: 1.9384
+2023-04-12 16:58:21 - training - INFO - Epoch [3/5][311/690] lr: 5.1e-06, eta: 4:16:29.217454, loss: 1.4749
+2023-04-12 16:58:29 - training - INFO - Epoch [3/5][321/690] lr: 5.1e-06, eta: 4:08:56.800914, loss: 1.0555
+2023-04-12 16:58:36 - training - INFO - Epoch [3/5][331/690] lr: 5.0e-06, eta: 4:01:49.921733, loss: 1.3558
+2023-04-12 16:58:44 - training - INFO - Epoch [3/5][341/690] lr: 5.0e-06, eta: 3:55:09.888709, loss: 1.6919
+2023-04-12 16:58:51 - training - INFO - Epoch [3/5][351/690] lr: 5.0e-06, eta: 3:48:50.327133, loss: 1.8124
+2023-04-12 16:58:59 - training - INFO - Epoch [3/5][361/690] lr: 5.0e-06, eta: 3:42:51.422258, loss: 1.3039
+2023-04-12 16:59:07 - training - INFO - Epoch [3/5][371/690] lr: 4.9e-06, eta: 3:37:12.292402, loss: 2.2286
+2023-04-12 16:59:14 - training - INFO - Epoch [3/5][381/690] lr: 4.9e-06, eta: 3:31:50.128464, loss: 1.5477
+2023-04-12 16:59:22 - training - INFO - Epoch [3/5][391/690] lr: 4.9e-06, eta: 3:26:45.021986, loss: 1.0551
+2023-04-12 16:59:29 - training - INFO - Epoch [3/5][401/690] lr: 4.8e-06, eta: 3:21:53.064151, loss: 1.5399
+2023-04-12 16:59:37 - training - INFO - Epoch [3/5][411/690] lr: 4.8e-06, eta: 3:17:15.783609, loss: 2.0328
+2023-04-12 16:59:45 - training - INFO - Epoch [3/5][421/690] lr: 4.8e-06, eta: 3:12:51.670526, loss: 1.5245
+2023-04-12 16:59:52 - training - INFO - Epoch [3/5][431/690] lr: 4.8e-06, eta: 3:08:38.768382, loss: 1.2446
+2023-04-12 17:00:00 - training - INFO - Epoch [3/5][441/690] lr: 4.7e-06, eta: 3:04:36.646548, loss: 1.8125
+2023-04-12 17:00:07 - training - INFO - Epoch [3/5][451/690] lr: 4.7e-06, eta: 3:00:45.274703, loss: 1.6069
+2023-04-12 17:00:15 - training - INFO - Epoch [3/5][461/690] lr: 4.7e-06, eta: 2:57:04.322786, loss: 1.9248
+2023-04-12 17:00:22 - training - INFO - Epoch [3/5][471/690] lr: 4.6e-06, eta: 2:53:31.679475, loss: 1.6960
+2023-04-12 17:00:30 - training - INFO - Epoch [3/5][481/690] lr: 4.6e-06, eta: 2:50:08.217692, loss: 1.5923
+2023-04-12 17:00:38 - training - INFO - Epoch [3/5][491/690] lr: 4.6e-06, eta: 2:46:52.421562, loss: 1.0918
+2023-04-12 17:00:45 - training - INFO - Epoch [3/5][501/690] lr: 4.5e-06, eta: 2:43:44.254365, loss: 1.8116
+2023-04-12 17:00:53 - training - INFO - Epoch [3/5][511/690] lr: 4.5e-06, eta: 2:40:42.967743, loss: 1.2519
+2023-04-12 17:01:00 - training - INFO - Epoch [3/5][521/690] lr: 4.5e-06, eta: 2:37:48.335193, loss: 1.6851
+2023-04-12 17:01:08 - training - INFO - Epoch [3/5][531/690] lr: 4.5e-06, eta: 2:34:59.580801, loss: 1.3006
+2023-04-12 17:01:15 - training - INFO - Epoch [3/5][541/690] lr: 4.4e-06, eta: 2:32:16.741377, loss: 1.0874
+2023-04-12 17:01:23 - training - INFO - Epoch [3/5][551/690] lr: 4.4e-06, eta: 2:29:40.069956, loss: 1.4676
+2023-04-12 17:01:31 - training - INFO - Epoch [3/5][561/690] lr: 4.4e-06, eta: 2:27:09.159570, loss: 1.5359
+2023-04-12 17:01:38 - training - INFO - Epoch [3/5][571/690] lr: 4.3e-06, eta: 2:24:43.446907, loss: 1.8094
+2023-04-12 17:01:46 - training - INFO - Epoch [3/5][581/690] lr: 4.3e-06, eta: 2:22:23.354104, loss: 0.6894
+2023-04-12 17:01:54 - training - INFO - Epoch [3/5][591/690] lr: 4.3e-06, eta: 2:20:06.266238, loss: 1.5051
+2023-04-12 17:02:02 - training - INFO - Epoch [3/5][601/690] lr: 4.3e-06, eta: 2:17:54.453264, loss: 1.7180
+2023-04-12 17:02:09 - training - INFO - Epoch [3/5][611/690] lr: 4.2e-06, eta: 2:15:45.127907, loss: 1.2247
+2023-04-12 17:02:17 - training - INFO - Epoch [3/5][621/690] lr: 4.2e-06, eta: 2:13:40.226316, loss: 1.0292
+2023-04-12 17:02:24 - training - INFO - Epoch [3/5][631/690] lr: 4.2e-06, eta: 2:11:39.035330, loss: 1.1217
+2023-04-12 17:02:32 - training - INFO - Epoch [3/5][641/690] lr: 4.1e-06, eta: 2:09:42.171578, loss: 1.6480
+2023-04-12 17:02:40 - training - INFO - Epoch [3/5][651/690] lr: 4.1e-06, eta: 2:07:48.663813, loss: 1.2960
+2023-04-12 17:02:47 - training - INFO - Epoch [3/5][661/690] lr: 4.1e-06, eta: 2:05:57.690769, loss: 1.2619
+2023-04-12 17:02:55 - training - INFO - Epoch [3/5][671/690] lr: 4.1e-06, eta: 2:04:09.793134, loss: 1.6590
+2023-04-12 17:03:03 - training - INFO - Epoch [3/5][681/690] lr: 4.0e-06, eta: 2:02:24.719889, loss: 0.9705
+2023-04-12 17:04:26 - training - INFO - Epoch [3/5][Evaluation] - Train Loss: 1.5784, Validation Metrics: {'exact_match': 17.92782305005821, 'f1': 24.008820669212056}, Test Metrics: {'exact_match': 20.78977932636469, 'f1': 26.547069667458917}
+2023-04-12 17:04:27 - training - INFO - Epoch [4/5][1/690] lr: 4.0e-06, eta: 75 days, 11:16:22.814204, loss: 1.6354
+2023-04-12 17:04:34 - training - INFO - Epoch [4/5][11/690] lr: 4.0e-06, eta: 6 days, 20:50:47.307124, loss: 1.0836
+2023-04-12 17:04:42 - training - INFO - Epoch [4/5][21/690] lr: 3.9e-06, eta: 3 days, 14:26:30.017319, loss: 1.2904
+2023-04-12 17:04:50 - training - INFO - Epoch [4/5][31/690] lr: 3.9e-06, eta: 2 days, 10:37:01.213364, loss: 1.5456
+2023-04-12 17:04:57 - training - INFO - Epoch [4/5][41/690] lr: 3.9e-06, eta: 1 day, 20:22:04.740560, loss: 1.7415
+2023-04-12 17:05:05 - training - INFO - Epoch [4/5][51/690] lr: 3.9e-06, eta: 1 day, 11:42:11.182989, loss: 1.0056
+2023-04-12 17:05:12 - training - INFO - Epoch [4/5][61/690] lr: 3.8e-06, eta: 1 day, 5:52:50.398116, loss: 1.3019
+2023-04-12 17:05:20 - training - INFO - Epoch [4/5][71/690] lr: 3.8e-06, eta: 1 day, 1:41:43.314776, loss: 1.0845
+2023-04-12 17:05:27 - training - INFO - Epoch [4/5][81/690] lr: 3.8e-06, eta: 22:32:35.605170, loss: 2.1681
+2023-04-12 17:05:35 - training - INFO - Epoch [4/5][91/690] lr: 3.7e-06, eta: 20:05:07.335473, loss: 1.4528
+2023-04-12 17:05:43 - training - INFO - Epoch [4/5][101/690] lr: 3.7e-06, eta: 18:06:49.390398, loss: 1.9240
+2023-04-12 17:05:50 - training - INFO - Epoch [4/5][111/690] lr: 3.7e-06, eta: 16:29:45.330396, loss: 1.7219
+2023-04-12 17:05:58 - training - INFO - Epoch [4/5][121/690] lr: 3.6e-06, eta: 15:08:44.725590, loss: 1.5904
+2023-04-12 17:06:06 - training - INFO - Epoch [4/5][131/690] lr: 3.6e-06, eta: 14:00:05.735975, loss: 1.4677
+2023-04-12 17:06:13 - training - INFO - Epoch [4/5][141/690] lr: 3.6e-06, eta: 13:01:09.390744, loss: 2.0228
+2023-04-12 17:06:21 - training - INFO - Epoch [4/5][151/690] lr: 3.6e-06, eta: 12:10:02.508789, loss: 1.8712
+2023-04-12 17:06:29 - training - INFO - Epoch [4/5][161/690] lr: 3.5e-06, eta: 11:25:12.401330, loss: 0.8794
+2023-04-12 17:06:36 - training - INFO - Epoch [4/5][171/690] lr: 3.5e-06, eta: 10:45:35.699214, loss: 1.0597
+2023-04-12 17:06:44 - training - INFO - Epoch [4/5][181/690] lr: 3.5e-06, eta: 10:10:26.078678, loss: 0.9438
+2023-04-12 17:06:52 - training - INFO - Epoch [4/5][191/690] lr: 3.4e-06, eta: 9:38:56.647897, loss: 1.5530
+2023-04-12 17:07:00 - training - INFO - Epoch [4/5][201/690] lr: 3.4e-06, eta: 9:10:29.109819, loss: 1.1400
+2023-04-12 17:07:07 - training - INFO - Epoch [4/5][211/690] lr: 3.4e-06, eta: 8:44:44.223367, loss: 1.8481
+2023-04-12 17:07:15 - training - INFO - Epoch [4/5][221/690] lr: 3.4e-06, eta: 8:21:17.269628, loss: 1.4377
+2023-04-12 17:07:23 - training - INFO - Epoch [4/5][231/690] lr: 3.3e-06, eta: 7:59:57.595689, loss: 1.2107
+2023-04-12 17:07:30 - training - INFO - Epoch [4/5][241/690] lr: 3.3e-06, eta: 7:40:18.852165, loss: 1.5478
+2023-04-12 17:07:38 - training - INFO - Epoch [4/5][251/690] lr: 3.3e-06, eta: 7:22:14.978827, loss: 1.3707
+2023-04-12 17:07:46 - training - INFO - Epoch [4/5][261/690] lr: 3.2e-06, eta: 7:05:31.411443, loss: 1.3542
+2023-04-12 17:07:54 - training - INFO - Epoch [4/5][271/690] lr: 3.2e-06, eta: 6:50:02.630690, loss: 0.7944
+2023-04-12 17:08:01 - training - INFO - Epoch [4/5][281/690] lr: 3.2e-06, eta: 6:35:40.509627, loss: 0.8820
+2023-04-12 17:08:09 - training - INFO - Epoch [4/5][291/690] lr: 3.2e-06, eta: 6:22:15.233997, loss: 1.7935
+2023-04-12 17:08:17 - training - INFO - Epoch [4/5][301/690] lr: 3.1e-06, eta: 6:09:44.777427, loss: 0.9627
+2023-04-12 17:08:24 - training - INFO - Epoch [4/5][311/690] lr: 3.1e-06, eta: 5:58:00.525429, loss: 1.2369
+2023-04-12 17:08:32 - training - INFO - Epoch [4/5][321/690] lr: 3.1e-06, eta: 5:47:01.004316, loss: 1.5085
+2023-04-12 17:08:40 - training - INFO - Epoch [4/5][331/690] lr: 3.0e-06, eta: 5:36:41.001964, loss: 1.4980
+2023-04-12 17:08:48 - training - INFO - Epoch [4/5][341/690] lr: 3.0e-06, eta: 5:26:53.909968, loss: 2.2650
+2023-04-12 17:08:56 - training - INFO - Epoch [4/5][351/690] lr: 3.0e-06, eta: 5:17:44.648229, loss: 1.3377
+2023-04-12 17:09:03 - training - INFO - Epoch [4/5][361/690] lr: 3.0e-06, eta: 5:09:02.145693, loss: 1.1679
+2023-04-12 17:09:11 - training - INFO - Epoch [4/5][371/690] lr: 2.9e-06, eta: 5:00:47.463051, loss: 2.0534
+2023-04-12 17:09:19 - training - INFO - Epoch [4/5][381/690] lr: 2.9e-06, eta: 4:52:59.588004, loss: 1.5003
+2023-04-12 17:09:26 - training - INFO - Epoch [4/5][391/690] lr: 2.9e-06, eta: 4:45:35.135332, loss: 1.1387
+2023-04-12 17:09:34 - training - INFO - Epoch [4/5][401/690] lr: 2.8e-06, eta: 4:38:30.340253, loss: 1.7697
+2023-04-12 17:09:42 - training - INFO - Epoch [4/5][411/690] lr: 2.8e-06, eta: 4:31:48.222168, loss: 1.3808
+2023-04-12 17:09:50 - training - INFO - Epoch [4/5][421/690] lr: 2.8e-06, eta: 4:25:24.610078, loss: 1.5307
+2023-04-12 17:09:57 - training - INFO - Epoch [4/5][431/690] lr: 2.8e-06, eta: 4:19:17.655712, loss: 0.9443
+2023-04-12 17:10:05 - training - INFO - Epoch [4/5][441/690] lr: 2.7e-06, eta: 4:13:26.137968, loss: 0.9330
+2023-04-12 17:10:13 - training - INFO - Epoch [4/5][451/690] lr: 2.7e-06, eta: 4:07:50.661460, loss: 1.5557
+2023-04-12 17:10:21 - training - INFO - Epoch [4/5][461/690] lr: 2.7e-06, eta: 4:02:32.792387, loss: 1.8755
+2023-04-12 17:10:29 - training - INFO - Epoch [4/5][471/690] lr: 2.6e-06, eta: 3:57:26.727894, loss: 1.6024
+2023-04-12 17:10:37 - training - INFO - Epoch [4/5][481/690] lr: 2.6e-06, eta: 3:52:32.153413, loss: 1.4578
+2023-04-12 17:10:45 - training - INFO - Epoch [4/5][491/690] lr: 2.6e-06, eta: 3:47:49.579858, loss: 1.8381
+2023-04-12 17:10:52 - training - INFO - Epoch [4/5][501/690] lr: 2.5e-06, eta: 3:43:16.504872, loss: 1.8940
+2023-04-12 17:11:01 - training - INFO - Epoch [4/5][511/690] lr: 2.5e-06, eta: 3:38:58.047116, loss: 1.6900
+2023-04-12 17:11:08 - training - INFO - Epoch [4/5][521/690] lr: 2.5e-06, eta: 3:34:45.382747, loss: 1.0736
+2023-04-12 17:11:16 - training - INFO - Epoch [4/5][531/690] lr: 2.5e-06, eta: 3:30:42.696906, loss: 1.3684
+2023-04-12 17:11:24 - training - INFO - Epoch [4/5][541/690] lr: 2.4e-06, eta: 3:26:47.620977, loss: 1.3871
+2023-04-12 17:11:32 - training - INFO - Epoch [4/5][551/690] lr: 2.4e-06, eta: 3:23:02.386528, loss: 1.1704
+2023-04-12 17:11:39 - training - INFO - Epoch [4/5][561/690] lr: 2.4e-06, eta: 3:19:23.117880, loss: 1.8741
+2023-04-12 17:11:47 - training - INFO - Epoch [4/5][571/690] lr: 2.3e-06, eta: 3:15:51.496442, loss: 1.1915
+2023-04-12 17:11:55 - training - INFO - Epoch [4/5][581/690] lr: 2.3e-06, eta: 3:12:26.867169, loss: 1.8168
+2023-04-12 17:12:02 - training - INFO - Epoch [4/5][591/690] lr: 2.3e-06, eta: 3:09:09.423762, loss: 1.6660
+2023-04-12 17:12:10 - training - INFO - Epoch [4/5][601/690] lr: 2.3e-06, eta: 3:05:57.829298, loss: 0.7990
+2023-04-12 17:12:18 - training - INFO - Epoch [4/5][611/690] lr: 2.2e-06, eta: 3:02:52.422710, loss: 0.6904
+2023-04-12 17:12:25 - training - INFO - Epoch [4/5][621/690] lr: 2.2e-06, eta: 2:59:51.772155, loss: 1.3243
+2023-04-12 17:12:33 - training - INFO - Epoch [4/5][631/690] lr: 2.2e-06, eta: 2:56:57.509790, loss: 1.6240
+2023-04-12 17:12:41 - training - INFO - Epoch [4/5][641/690] lr: 2.1e-06, eta: 2:54:09.640113, loss: 1.3571
+2023-04-12 17:12:48 - training - INFO - Epoch [4/5][651/690] lr: 2.1e-06, eta: 2:51:24.897510, loss: 1.4827
+2023-04-12 17:12:56 - training - INFO - Epoch [4/5][661/690] lr: 2.1e-06, eta: 2:48:46.089236, loss: 1.4112
+2023-04-12 17:13:04 - training - INFO - Epoch [4/5][671/690] lr: 2.1e-06, eta: 2:46:12.938941, loss: 1.3231
+2023-04-12 17:13:12 - training - INFO - Epoch [4/5][681/690] lr: 2.0e-06, eta: 2:43:42.241104, loss: 0.9393
+2023-04-12 17:14:33 - training - INFO - Epoch [4/5][Evaluation] - Train Loss: 1.4328, Validation Metrics: {'exact_match': 17.92782305005821, 'f1': 23.330077914037613}, Test Metrics: {'exact_match': 21.951219512195124, 'f1': 27.269203137381563}
+2023-04-12 17:14:34 - training - INFO - Epoch [5/5][1/690] lr: 2.0e-06, eta: 99 days, 16:57:28.182499, loss: 1.3744
+2023-04-12 17:14:42 - training - INFO - Epoch [5/5][11/690] lr: 2.0e-06, eta: 9 days, 1:34:39.505299, loss: 0.7404
+2023-04-12 17:14:49 - training - INFO - Epoch [5/5][21/690] lr: 1.9e-06, eta: 4 days, 17:58:57.350901, loss: 1.5594
+2023-04-12 17:14:57 - training - INFO - Epoch [5/5][31/690] lr: 1.9e-06, eta: 3 days, 5:13:12.123799, loss: 0.8481
+2023-04-12 17:15:04 - training - INFO - Epoch [5/5][41/690] lr: 1.9e-06, eta: 2 days, 10:23:28.832918, loss: 1.0895
+2023-04-12 17:15:12 - training - INFO - Epoch [5/5][51/690] lr: 1.9e-06, eta: 1 day, 22:56:36.298383, loss: 1.1376
+2023-04-12 17:15:20 - training - INFO - Epoch [5/5][61/690] lr: 1.8e-06, eta: 1 day, 15:15:00.108583, loss: 1.1290
+2023-04-12 17:15:27 - training - INFO - Epoch [5/5][71/690] lr: 1.8e-06, eta: 1 day, 9:43:26.398857, loss: 0.9284
+2023-04-12 17:15:35 - training - INFO - Epoch [5/5][81/690] lr: 1.8e-06, eta: 1 day, 5:33:40.750239, loss: 1.7489
+2023-04-12 17:15:42 - training - INFO - Epoch [5/5][91/690] lr: 1.7e-06, eta: 1 day, 2:18:41.660317, loss: 2.2317
+2023-04-12 17:15:50 - training - INFO - Epoch [5/5][101/690] lr: 1.7e-06, eta: 23:42:22.094791, loss: 1.1783
+2023-04-12 17:15:58 - training - INFO - Epoch [5/5][111/690] lr: 1.7e-06, eta: 21:34:11.436744, loss: 1.4005
+2023-04-12 17:16:05 - training - INFO - Epoch [5/5][121/690] lr: 1.6e-06, eta: 19:47:08.648890, loss: 1.7199
+2023-04-12 17:16:13 - training - INFO - Epoch [5/5][131/690] lr: 1.6e-06, eta: 18:16:28.706874, loss: 0.8158
+2023-04-12 17:16:21 - training - INFO - Epoch [5/5][141/690] lr: 1.6e-06, eta: 16:58:38.173065, loss: 1.7685
+2023-04-12 17:16:28 - training - INFO - Epoch [5/5][151/690] lr: 1.6e-06, eta: 15:51:04.135796, loss: 1.2011
+2023-04-12 17:16:36 - training - INFO - Epoch [5/5][161/690] lr: 1.5e-06, eta: 14:51:51.461003, loss: 1.1934
+2023-04-12 17:16:43 - training - INFO - Epoch [5/5][171/690] lr: 1.5e-06, eta: 13:59:36.811572, loss: 1.2369
+2023-04-12 17:16:51 - training - INFO - Epoch [5/5][181/690] lr: 1.5e-06, eta: 13:13:04.858524, loss: 1.3092
+2023-04-12 17:16:59 - training - INFO - Epoch [5/5][191/690] lr: 1.4e-06, eta: 12:31:24.983187, loss: 2.0503
+2023-04-12 17:17:06 - training - INFO - Epoch [5/5][201/690] lr: 1.4e-06, eta: 11:53:53.493657, loss: 1.2759
+2023-04-12 17:17:14 - training - INFO - Epoch [5/5][211/690] lr: 1.4e-06, eta: 11:19:58.320918, loss: 0.9275
+2023-04-12 17:17:22 - training - INFO - Epoch [5/5][221/690] lr: 1.4e-06, eta: 10:49:05.314503, loss: 1.2786
+2023-04-12 17:17:29 - training - INFO - Epoch [5/5][231/690] lr: 1.3e-06, eta: 10:20:49.167102, loss: 2.1158
+2023-04-12 17:17:37 - training - INFO - Epoch [5/5][241/690] lr: 1.3e-06, eta: 9:54:54.470742, loss: 1.8269
+2023-04-12 17:17:45 - training - INFO - Epoch [5/5][251/690] lr: 1.3e-06, eta: 9:31:03.794817, loss: 2.1269
+2023-04-12 17:17:52 - training - INFO - Epoch [5/5][261/690] lr: 1.2e-06, eta: 9:09:01.410111, loss: 1.9166
+2023-04-12 17:18:00 - training - INFO - Epoch [5/5][271/690] lr: 1.2e-06, eta: 8:48:34.381127, loss: 1.2452
+2023-04-12 17:18:07 - training - INFO - Epoch [5/5][281/690] lr: 1.2e-06, eta: 8:29:34.689464, loss: 0.8342
+2023-04-12 17:18:15 - training - INFO - Epoch [5/5][291/690] lr: 1.2e-06, eta: 8:11:53.254446, loss: 1.0927
+2023-04-12 17:18:23 - training - INFO - Epoch [5/5][301/690] lr: 1.1e-06, eta: 7:55:21.982477, loss: 1.9133
+2023-04-12 17:18:30 - training - INFO - Epoch [5/5][311/690] lr: 1.1e-06, eta: 7:39:55.473213, loss: 1.4771
+2023-04-12 17:18:38 - training - INFO - Epoch [5/5][321/690] lr: 1.1e-06, eta: 7:25:23.894106, loss: 1.7538
+2023-04-12 17:18:45 - training - INFO - Epoch [5/5][331/690] lr: 1.0e-06, eta: 7:11:44.689193, loss: 0.6084
+2023-04-12 17:18:53 - training - INFO - Epoch [5/5][341/690] lr: 1.0e-06, eta: 6:58:54.676301, loss: 1.2462
+2023-04-12 17:19:01 - training - INFO - Epoch [5/5][351/690] lr: 9.8e-07, eta: 6:46:47.965722, loss: 0.9596
+2023-04-12 17:19:08 - training - INFO - Epoch [5/5][361/690] lr: 9.5e-07, eta: 6:35:20.347597, loss: 0.8912
+2023-04-12 17:19:16 - training - INFO - Epoch [5/5][371/690] lr: 9.2e-07, eta: 6:24:29.998668, loss: 1.2727
+2023-04-12 17:19:24 - training - INFO - Epoch [5/5][381/690] lr: 9.0e-07, eta: 6:14:14.491950, loss: 1.4193
+2023-04-12 17:19:31 - training - INFO - Epoch [5/5][391/690] lr: 8.7e-07, eta: 6:04:28.234262, loss: 1.5421
+2023-04-12 17:19:39 - training - INFO - Epoch [5/5][401/690] lr: 8.4e-07, eta: 5:55:11.817877, loss: 1.2047
+2023-04-12 17:19:47 - training - INFO - Epoch [5/5][411/690] lr: 8.1e-07, eta: 5:46:22.092096, loss: 1.0955
+2023-04-12 17:19:55 - training - INFO - Epoch [5/5][421/690] lr: 7.8e-07, eta: 5:37:58.876332, loss: 1.3392
+2023-04-12 17:20:03 - training - INFO - Epoch [5/5][431/690] lr: 7.5e-07, eta: 5:29:59.326560, loss: 2.2067
+2023-04-12 17:20:11 - training - INFO - Epoch [5/5][441/690] lr: 7.2e-07, eta: 5:22:21.590217, loss: 1.3389
+2023-04-12 17:20:20 - training - INFO - Epoch [5/5][451/690] lr: 6.9e-07, eta: 5:15:11.073207, loss: 1.2221
+2023-04-12 17:20:28 - training - INFO - Epoch [5/5][461/690] lr: 6.6e-07, eta: 5:08:12.945989, loss: 1.6172
+2023-04-12 17:20:37 - training - INFO - Epoch [5/5][471/690] lr: 6.3e-07, eta: 5:01:30.987381, loss: 1.3701
+2023-04-12 17:20:44 - training - INFO - Epoch [5/5][481/690] lr: 6.1e-07, eta: 4:55:03.802596, loss: 1.3266
+2023-04-12 17:20:52 - training - INFO - Epoch [5/5][491/690] lr: 5.8e-07, eta: 4:48:51.842429, loss: 1.3469
+2023-04-12 17:21:00 - training - INFO - Epoch [5/5][501/690] lr: 5.5e-07, eta: 4:42:55.947990, loss: 1.5183
+2023-04-12 17:21:08 - training - INFO - Epoch [5/5][511/690] lr: 5.2e-07, eta: 4:37:12.418190, loss: 1.0485
+2023-04-12 17:21:17 - training - INFO - Epoch [5/5][521/690] lr: 4.9e-07, eta: 4:31:46.911671, loss: 1.4770
+2023-04-12 17:21:25 - training - INFO - Epoch [5/5][531/690] lr: 4.6e-07, eta: 4:26:29.076453, loss: 1.1130
+2023-04-12 17:21:33 - training - INFO - Epoch [5/5][541/690] lr: 4.3e-07, eta: 4:21:26.063977, loss: 0.9416
+2023-04-12 17:21:43 - training - INFO - Epoch [5/5][551/690] lr: 4.0e-07, eta: 4:16:36.878900, loss: 1.2452
+2023-04-12 17:21:51 - training - INFO - Epoch [5/5][561/690] lr: 3.7e-07, eta: 4:11:51.905427, loss: 1.2895
+2023-04-12 17:21:59 - training - INFO - Epoch [5/5][571/690] lr: 3.4e-07, eta: 4:07:14.916958, loss: 1.2388
+2023-04-12 17:22:06 - training - INFO - Epoch [5/5][581/690] lr: 3.2e-07, eta: 4:02:47.195443, loss: 1.3193
+2023-04-12 17:22:14 - training - INFO - Epoch [5/5][591/690] lr: 2.9e-07, eta: 3:58:29.046267, loss: 2.0083
+2023-04-12 17:22:22 - training - INFO - Epoch [5/5][601/690] lr: 2.6e-07, eta: 3:54:18.470272, loss: 1.8081
+2023-04-12 17:22:30 - training - INFO - Epoch [5/5][611/690] lr: 2.3e-07, eta: 3:50:15.766380, loss: 1.8500
+2023-04-12 17:22:38 - training - INFO - Epoch [5/5][621/690] lr: 2.0e-07, eta: 3:46:21.760245, loss: 1.6163
+2023-04-12 17:22:45 - training - INFO - Epoch [5/5][631/690] lr: 1.7e-07, eta: 3:42:33.095580, loss: 1.6242
+2023-04-12 17:22:53 - training - INFO - Epoch [5/5][641/690] lr: 1.4e-07, eta: 3:38:52.839048, loss: 1.7221
+2023-04-12 17:23:01 - training - INFO - Epoch [5/5][651/690] lr: 1.1e-07, eta: 3:35:19.265928, loss: 1.0681
+2023-04-12 17:23:09 - training - INFO - Epoch [5/5][661/690] lr: 8.4e-08, eta: 3:31:50.368269, loss: 1.5408
+2023-04-12 17:23:16 - training - INFO - Epoch [5/5][671/690] lr: 5.5e-08, eta: 3:28:28.409613, loss: 1.4445
+2023-04-12 17:23:24 - training - INFO - Epoch [5/5][681/690] lr: 2.6e-08, eta: 3:25:12.280968, loss: 1.0038
+2023-04-12 17:24:52 - training - INFO - Epoch [5/5][Evaluation] - Train Loss: 1.3391, Validation Metrics: {'exact_match': 19.09196740395809, 'f1': 24.496996373557824}, Test Metrics: {'exact_match': 22.880371660859467, 'f1': 28.04800115959816}
+2023-04-12 17:25:30 - training - INFO - Final Test - Train Loss: 1.3391, Test Metrics: {'exact_match': 22.880371660859467, 'f1': 28.04800115959816}
