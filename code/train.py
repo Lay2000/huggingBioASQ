@@ -80,7 +80,7 @@ def main():
     # Load and preprocess datasets
     bioasq_dataset = load_bioasq_dataset(task_type)
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
-    train_dataset, validation_dataset, test_dataset = preprocess_datasets(tokenizer, bioasq_dataset, max_length, stride)
+    train_dataset, validation_dataset, test_dataset = preprocess_datasets(tokenizer, bioasq_dataset, max_length, stride, model_checkpoint)
     train_dataloader, validation_dataloader, test_dataloader = create_dataloaders(train_dataset, validation_dataset, test_dataset, batch_size)
 
     # Load model, optimizer, scheduler, and accelerator

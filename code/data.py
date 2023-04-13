@@ -24,7 +24,7 @@ def flatten_dataset(dataset):
 
     return flattened_examples
 
-def preprocess_training_examples(examples, tokenizer, max_length = 384, stride = 128):
+def preprocess_training_examples(examples, tokenizer, max_length = 384, stride = 128, model_checkpoint=None):
     questions = [q.strip() for q in examples["question"]]
     inputs = tokenizer(
         questions,
@@ -48,7 +48,8 @@ def preprocess_training_examples(examples, tokenizer, max_length = 384, stride =
         answer = answers[sample_idx]
         start_char = answer["answer_start"][0]
         end_char = answer["answer_start"][0] + len(answer["text"][0])
-        sequence_ids = inputs.sequence_ids(i)
+        
+        sequence_ids = inputs.sequence_ids(i) if "xlnet" not in model_checkpoint else inputs.token_type_ids[i]
 
         # Find the start and end of the context
         idx = 0
@@ -79,7 +80,7 @@ def preprocess_training_examples(examples, tokenizer, max_length = 384, stride =
     inputs["end_positions"] = end_positions
     return inputs
 
-def preprocess_validation_examples(examples, tokenizer, max_length = 384, stride = 128):
+def preprocess_validation_examples(examples, tokenizer, max_length = 384, stride = 128, model_checkpoint=None):
     questions = [q.strip() for q in examples["question"]]
     inputs = tokenizer(
         questions,
@@ -99,7 +100,7 @@ def preprocess_validation_examples(examples, tokenizer, max_length = 384, stride
         sample_idx = sample_map[i]
         example_ids.append(examples["id"][sample_idx])
 
-        sequence_ids = inputs.sequence_ids(i)
+        sequence_ids = inputs.sequence_ids(i) if "xlnet" not in model_checkpoint else inputs.token_type_ids[i]
         offset = inputs["offset_mapping"][i]
         inputs["offset_mapping"][i] = [
             o if sequence_ids[k] == 1 else None for k, o in enumerate(offset)
@@ -133,21 +134,21 @@ def load_bioasq_dataset(type='list'):
     })
     return raw_datasets
 
-def preprocess_datasets(tokenizer, raw_datasets, max_length, stride):
+def preprocess_datasets(tokenizer, raw_datasets, max_length, stride, model_checkpoint):
     train_dataset = raw_datasets["train"].map(
-        partial(preprocess_training_examples, tokenizer=tokenizer, max_length=max_length, stride=stride),
+        partial(preprocess_training_examples, tokenizer=tokenizer, max_length=max_length, stride=stride, model_checkpoint=model_checkpoint),
         batched=True,
         remove_columns=raw_datasets["train"].column_names,
     )
 
     validation_dataset = raw_datasets["validation"].map(
-        partial(preprocess_validation_examples, tokenizer=tokenizer, max_length=max_length, stride=stride),
+        partial(preprocess_validation_examples, tokenizer=tokenizer, max_length=max_length, stride=stride, model_checkpoint=model_checkpoint),
         batched=True,
         remove_columns=raw_datasets["validation"].column_names,
     )
 
     test_dataset = raw_datasets["test"].map(
-        partial(preprocess_validation_examples, tokenizer=tokenizer, max_length=max_length, stride=stride),
+        partial(preprocess_validation_examples, tokenizer=tokenizer, max_length=max_length, stride=stride, model_checkpoint=model_checkpoint),
         batched=True,
         remove_columns=raw_datasets["test"].column_names,
     )
